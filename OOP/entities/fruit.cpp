@@ -3,6 +3,16 @@
 
 using namespace std;
 
+Fruit :: Fruit()
+{
+    cout << "Fruit :: Fruit()" << endl;
+}
+
+Fruit :: ~Fruit()
+{
+    cout << "Fruit :: ~Fruit()" << endl;
+}
+
 void Fruit :: eat()
 {
     cout << "Eating fruit..." << endl;

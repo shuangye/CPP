@@ -1,4 +1,5 @@
-// how to compile: cl main.cpp test.cpp food.cpp fruit.cpp creature.cpp animal.cpp
+// how to compile:
+// cl /I entities main.cpp test.cpp entities/*.cpp
 
 #include <iostream>
 #include "test.h"
@@ -7,7 +8,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    static_bind();
-    dynamic_bind();
+    lifecycle_stack();
+    lifecycle_heap();
+    // static_bind();
+    // dynamic_bind();
+    // mixed_virtual();
     return 0;
 }

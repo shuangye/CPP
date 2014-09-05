@@ -1,5 +1,5 @@
-#ifndef CPP_OOP_CREATURE_H
-#define CPP_OOP_CREATURE_H
+#ifndef CPP_OOP_ENTITIES_CREATURE_H
+#define CPP_OOP_ENTITIES_CREATURE_H
 
 class Creature
 {

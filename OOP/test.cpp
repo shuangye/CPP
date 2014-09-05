@@ -3,8 +3,41 @@
 #include "fruit.h"
 #include "creature.h"
 #include "animal.h"
+#include "mammal.h"
 
 using namespace std;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// object lifecycle
+
+// Food :: Food()
+// Fruit :: Fruit()
+// end of lifecycle_stack().
+// Fruit :: ~Fruit()
+// Food :: ~Food()
+// Conclusion: when the object is allocated on the stack, it will be destructed when it leaves its scope.
+void lifecycle_stack()
+{
+    Fruit fruit;
+    cout << "end of lifecycle_stack()." << endl;
+}
+
+// Food :: Food()
+// Fruit :: Fruit()
+// Fruit :: ~Fruit()
+// Food :: ~Food()
+// end of lifecycle_heap().
+// Conclusion: when the object is allocated on the heap, it will be destructed when delete the pointer to it.
+void lifecycle_heap()
+{
+    Fruit *fruit = new Fruit();
+    delete fruit;
+    fruit = nullptr;
+    cout << "end of lifecycle_heap()." << endl;
+}
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +70,12 @@ void static_bind()
 // It defers the choice of which function is called until runtime
 // through the use of a lookup table - one for each class.
 // 相对于静态绑定，动态绑定会带来一些运行时的开销。
+// 如果继承链中混合了 virtual 方法和 non-virtual 方法，那会怎样呢？
+//
+// When you create animal, an instance of Animal, its v-table (virtual table) will be
+// the v-table for Animal. When cast to Creature *, it doesn’t alter the contents of the object.
+// The v-table is still the v-table for Animal, not Creature. Therefore when the v-table is looked up
+// for the call to desc(), the result is Animal::desc() which will be called.
 void dynamic_bind()
 {
     Animal *animal = new Animal();
@@ -44,4 +83,17 @@ void dynamic_bind()
     creature -> desc();  // "Class Animal."
     delete animal;
     animal = nullptr;
+}
+
+// 在继承链中可以混合虚方法和非虚方法 (hide virtual)
+// 此时调用的函数似乎取决于 cast 后的类型是 virtual 还是非 virtual
+// 若 Creature::desc() 是虚函数，则仍调用 Mammal::desc(); 
+// 若 Creature::desc() 是非虚函数，则调用 Creature::desc()
+void mixed_virtual()
+{
+    Mammal *mammal = new Mammal();
+    Creature *creature = (Creature *)mammal;
+    creature -> desc();
+    delete mammal;
+    mammal = nullptr;
 }
