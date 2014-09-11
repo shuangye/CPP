@@ -1,0 +1,4 @@
+OOP 关注的是数据，而泛型编程关注的是算法。二者的共同之处是抽象和代码可重用，但哲学思想则大相径庭。
+泛型编程的一个目标是编写与数据类型无关的代码。模板是 C++ 中创建泛型程序的一个工具，可用之定义泛型函数和类。STL 则通过提供对算法的通用表示 (generic representation) 使之更上一层楼。
+Understanding iterators is perhaps the key to understanding the STL. Just as templates make algorithms independent of the type of data stored, iterators make the algorithms independent of the type of container used. Thus, they are an essential component of the STL's generic approach.
+Template 使存储在 container 中的数据变得 generic; iterator 使对 container 的遍历变得 generic.
