@@ -56,3 +56,10 @@ void parameter_passing()
     cout << "Passing by reference, book.price = " << book.price << endl;
 }
 
+#ifdef __cplusplus
+extern "C" {
+    int foo(int x) { return x; }
+    // int foo(int x, int y) { return x + y; }  // second C linkage of overloaded function not allowed
+}
+#endif
+

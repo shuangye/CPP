@@ -1,0 +1,3 @@
+The STL has both container concepts and container types. The concepts are general categories with names such as container, sequence container, and associative container. The container types are templates you can use to create specific container objects.
+原来有 11 种 container types: deque, list, queue, priority_queue, stack, vector, map, multimap, set, multiset, and bitset.
+C++11 增加了 forward_list, unordered_map, unordered_multimap, unordered_set, and unordered_multiset, 并把 bitset 从 container category 移动到了其自己的一个独立的 category.
