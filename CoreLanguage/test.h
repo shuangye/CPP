@@ -3,5 +3,6 @@
 
 void stack_heap(int);
 void parameter_passing();
+extern "C" void pre_check(size_t size);
 
 #endif

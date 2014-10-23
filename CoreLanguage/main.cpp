@@ -11,5 +11,7 @@ int main(int argc, char *argv[])
 {
     // stack_heap(argc);
     parameter_passing();
+    pre_check(1024);
+    pre_check(1025);
     return 0;
 }

@@ -1,0 +1,5 @@
+STL 于 1994 年诞生于 HP 实验室。它不是 OOP 的一个例子，而是一个被称谓 generic programming 的编程范式。
+包括 5 个组件：算法、容器、迭代器、函数、适配器。
+
+std::shared_ptr 类似于 ARC.
+generalization, specialization.
