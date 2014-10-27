@@ -78,6 +78,9 @@ void static_bind()
 // for the call to desc(), the result is Animal::desc() which will be called.
 void dynamic_bind()
 {
+    // 强制类型转换不修改数据，只是让编译器以另一种方式解释数据。
+    // animal 指针被强制转换成了 Creature* 类型，但它实际指向的数据仍是 new Animal() 的返回值，
+    // 故动态绑定时仍调用 Animal::desc()
     Animal *animal = new Animal();
     Creature *creature = (Creature *)animal;
     creature -> desc();  // "Class Animal."
