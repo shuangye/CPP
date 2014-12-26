@@ -1,5 +1,0 @@
-It is important to distinguish between program errors and run-time errors:
-A program error is a bug, and should never occur.
-A run-time error can validly occur at any time during program execution.
-Assertions are not a mechanism for handling run-time errors. Cases like invalid user input must be handled by appropriate error-checking and recovery code (such as requesting another input), not by assertions.
-Exactly what conditions are to be checked by assertions and what by run-time error- checking code is a design issue.
