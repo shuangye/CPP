@@ -25,12 +25,11 @@ char window_name[] = "Smoothing Demo";
 int display_caption(const char* caption);
 int display_dst(int delay);
 
-
 /**
 * function main
 */
 int main(void)
-{
+{	
 	namedWindow(window_name, WINDOW_AUTOSIZE);
 
 	/// Load the source image
