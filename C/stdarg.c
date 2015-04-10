@@ -1,6 +1,10 @@
 #include <stdarg.h>
 
-int maxof(int n_args, ...){	
+#ifdef __cplusplus
+
+#endif
+
+static int maxof(int n_args, ...){	
 	int max, a;
 	va_list ap;
 

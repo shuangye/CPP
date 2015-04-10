@@ -5,6 +5,7 @@
 */
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -25,11 +26,29 @@ char window_name[] = "Smoothing Demo";
 int display_caption(const char* caption);
 int display_dst(int delay);
 
+
+const char* str()
+{
+	string *cpp_str = new string("Hello");
+	const char* result = cpp_str->c_str();
+	size_t n = sizeof(*result) * (strlen(result) + 1);
+	char *buffer = (char *)malloc(n);
+	memcpy(buffer, result, n);
+	delete cpp_str;
+	cpp_str = nullptr;
+	return buffer;
+}
+
 /**
 * function main
 */
 int main(void)
 {	
+	const char *s = str();
+	printf("%s", s);
+	return 0;
+
+
 	namedWindow(window_name, WINDOW_AUTOSIZE);
 
 	/// Load the source image

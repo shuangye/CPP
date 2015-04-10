@@ -2,9 +2,8 @@
 #ifndef _CPP_C_SORT_HPP
 #define _CPP_C_SORT_HPP
 
-#include<vector>
-#include "api.h"
-using namespace std;
+#include <vector>
+using std::vector;
 
 // 模板不支持分离编译, 必须把模板的声明和实现放在同一个文件中。
 
@@ -17,7 +16,7 @@ vector<T>& bubble_sort(vector<T>& to_be_sorted)
 	for (int i = 0; i < max_index; ++i)
 		for (int j = 0; j < max_index - i; ++j)
 			if (to_be_sorted[j] > to_be_sorted[j + 1])
-				swap(to_be_sorted[j], to_be_sorted[j + 1]);
+				std::swap(to_be_sorted[j], to_be_sorted[j + 1]);
 	return to_be_sorted;
 }
 

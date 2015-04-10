@@ -67,15 +67,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sort.hpp" />
     <ClCompile Include="stdarg.c" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="tests.c" />
+    <ClCompile Include="tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="docs\assert.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="api.h" />
+    <ClInclude Include="middle.h" />
     <ClInclude Include="list.hpp" />
+    <ClInclude Include="stdarg.h" />
     <ClInclude Include="tests.h" />
+    <ClInclude Include="tests_c.h" />
     <ClInclude Include="tree.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
